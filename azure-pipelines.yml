@@ -18,6 +18,8 @@ steps:
   displayName: 'docker build'
 
 - script: |
-      docker login -u $(dockerId) -p $(dockerPassword) https://index.docker.io/v1/
+      docker login -u $(dockerId) -p $(pswd)
       docker push $(dockerId)/$(imageName)
+  env:
+    pswd: $(dockerPassword)
   displayName: 'docker push'
