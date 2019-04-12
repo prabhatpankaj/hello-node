@@ -12,6 +12,7 @@ pool:
 variables:
   dockerId: 'prabhatiitbhu'
   imageName: 'hello-node:$(build.buildId)'
+  group : mypipelinevariable
 
 steps:
 - script: docker build -f Dockerfile -t $(dockerId)/$(imageName) .
